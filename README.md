@@ -2,19 +2,18 @@
 
 <img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="150" alt="Identity Threat Protection Logo" />
 
-<h1>Identity Threat Protection Platform</h1>
+<h1>Identity Threat Protection</h1>
 
-<p><strong>The Institutional-Grade Proactive Enforcement Engine for Zero-Trust Access, Adaptive Authentication, and Real-Time Threat Mitigation</strong></p>
+<p><strong>The Institutional-Grade Platform for Proactive Enforcement, Real-Time Risk Mitigation, and Zero-Trust Identity Protection.</strong></p>
 
-[![Standard: NIST--800--207](https://img.shields.io/badge/Standard-NIST--800--207-blue.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Security: Zero--Trust](https://img.shields.io/badge/Security-Zero--Trust-green.svg?style=for-the-badge&labelColor=000000)]()
-[![Platform: Multi--Cloud](https://img.shields.io/badge/Platform-Multi--Cloud-0078d4?style=for-the-badge&labelColor=000000)]()
+[![Standard: Identity-Excellence](https://img.shields.io/badge/Standard-Identity--Excellence-blue.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: Zero--Standing--Privilege](https://img.shields.io/badge/Focus-Zero--Standing--Privilege-indigo.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
 > **"Identity is the primary vector; protection is the only defense."** 
-> Identity Threat Protection is a flagship platform designed to go beyond detection by enforcing real-time proactive controls. By orchestrating adaptive authentication and conditional access across hybrid environments, it stops identity-based attacks before they impact the business.
+> **Identity Threat Protection** is an enterprise-grade platform designed to provide a secure, measurable, and highly automated foundation for global identity operations. It orchestrates the complex lifecycle of identity security—from AIOps-driven anomaly detection and risk-based conditional access to distributed session revocation and unified identity governance.
 
 </div>
 
@@ -22,365 +21,262 @@
 
 ## 🏛️ Executive Summary
 
-The **Identity Threat Protection Platform** is a specialized flagship solution designed for CISOs, Security Architects, and IAM Leaders. While threat detection identifies attacks in progress, **Threat Protection** focuses on prevention and real-time mitigation. In a world of credential theft and MFA bypass, traditional "allow/deny" policies are no longer sufficient.
+Fragmented identity controls and manual threat response processes are strategic security liabilities; lack of centralized identity orchestration is a primary barrier to organizational Zero Trust maturity. Organizations fail to maintain identity integrity not because of a lack of authentication tools, but because of fragmented protection standards, lack of automated risk validation, and an inability to orchestrate identity landing zones with operational precision.
 
-This platform provides an **Adaptive Enforcement Plane**. It demonstrates how to orchestrate real-time risk-based access using **FastAPI**, **React 18**, and **Terraform**. By integrating **Continuous Authentication**, **Device Posture Scoring**, and **Automated Session Revocation**, it ensures that every access attempt is verified against the current risk context, effectively enforcing Zero Trust principles across AWS, Azure, GCP, and on-premises environments.
-
----
-
-## 📉 The "Protection Gap" Problem
-
-Enterprises relying on legacy identity controls face significant defensive gaps:
-- **Static Access Policies**: Policies that don't adapt to real-time risk (e.g., granting access to a "standard" user who is currently logging in from a high-risk geo).
-- **Session Hijacking Vulnerability**: Once a session is established, it is often trusted indefinitely, allowing attackers to reuse stolen session tokens.
-- **MFA Fatigue & Bypass**: Traditional MFA being defeated through "push bombardment" or adversary-in-the-middle (AiTM) proxies.
-- **Privileged Shadow Access**: Lack of "Just-in-Time" (JIT) controls leading to excessive administrative accounts with perpetual access.
+This platform provides the **Identity Intelligence Plane**. It implements a complete **Enterprise Protection-as-Code Framework**, enabling Security and Identity teams to manage global identity threats as first-class citizens. By automating the identification of suspicious patterns through real-time login analysis and orchestrating the immediate revocation of compromised sessions, we ensure that every organizational identity—from privileged admin accounts to routine employee logins—is protected by default, audited for history, and strictly aligned with institutional identity frameworks.
 
 ---
 
-## 🚀 Strategic Drivers & Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Drivers
-- **Zero Trust Implementation**: Moving from "Trust then Verify" to "Never Trust, Always Verify."
-- **Cyber Resilience**: Proactively reducing the attack surface by hardening authentication flows and reducing dormant access.
-- **Regulatory Compliance**: Meeting executive orders and regulatory requirements for "Phishing-Resistant MFA" and "Least Privilege."
+### 1. Principal Architecture: Global Identity Threat & Intelligence Plane
+This diagram illustrates the end-to-end flow from multi-cloud IdP ingestion and anomaly detection to risk-based auth, session revocation, and institutional identity auditing.
 
-### 💰 Business Outcomes
-- **90% Reduction in Breach Impact**: Automated containment (account lock/token revocation) stops lateral movement in seconds.
-- **Frictionless User Experience**: Reducing MFA prompts for low-risk scenarios while increasing security for high-risk attempts.
-- **Unified Protection Policy**: Consistent enforcement of security baselines across heterogeneous cloud and SaaS providers.
+```mermaid
+graph LR
+    %% Subgraph Definitions
+    subgraph IdentityIngress["Multi-Cloud & IdP Ingress"]
+        direction TB
+        Cloud_IdPs["Entra ID / Okta / Ping / Google"]
+        Access_Logs["AuthN & AuthZ Telemetry"]
+        User_Context["Behavioral & Geo Signals"]
+    end
+
+    subgraph IntelligenceEngine["Identity Intelligence Hub"]
+        direction TB
+        API["FastAPI Protection Gateway"]
+        RiskEngine["Risk-Based Decision Hub"]
+        EnforcementOrch["Remediation & Lock Orch"]
+        SessionGuardian["Session Revocation Hub"]
+    end
+
+    subgraph OperationsPlane["Distributed Protection Fleet"]
+        direction TB
+        AnomalyNodes["AIOps Pattern Scanners"]
+        ComplianceValidators["MFA & Policy Enforcers"]
+        LockoutProxies["Distributed Lockout Proxies"]
+    end
+
+    subgraph OperationsHub["Institutional Identity Hub"]
+        direction TB
+        Scorecard["Identity Maturity Score"]
+        Analytics["Remediation & Threat Stats"]
+        Audit["Forensic Identity Metadata Lake"]
+    end
+
+    subgraph DevOps["Protection-as-Code Framework"]
+        direction TB
+        TF["Terraform Protection Modules"]
+        ThreatBot["Compromised Identity Validator"]
+        ChatOps["Lockout Approval Hub"]
+    end
+
+    %% Flow Arrows
+    IdentityIngress -->|1. Submit Identity Data| API
+    API -->|2. Evaluate Risk| RiskEngine
+    RiskEngine -->|3. Identify Remediation| EnforcementOrch
+    EnforcementOrch -->|4. Revoke Session| SessionGuardian
+    
+    SessionGuardian -->|5. Execute Lockout| OperationsPlane
+    OperationsPlane -->|6. Notify Status| ChatOps
+    API -->|7. Visualize Health| Scorecard
+    
+    Scorecard -->|8. Track Posture| Analytics
+    Scorecard -->|9. Record Threat| Audit
+    
+    TF -->|10. Provision Hub| IntelligenceEngine
+    ThreatBot -->|11. Inject Compromise Risk| RiskEngine
+    Audit -->|12. Improve Protection| AnomalyNodes
+
+    %% Styling
+    classDef ingress fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#e8eaf6,stroke:#1a237e,stroke-width:2px;
+    classDef enforcement fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+    class IdentityIngress ingress;
+    class IntelligenceEngine intel;
+    class OperationsPlane enforcement;
+    class OperationsHub ops;
+    class DevOps devops;
+```
+
+### 2. The Identity Threat Lifecycle Flow
+The continuous path of an identity threat from initial detection (anomaly) and triage (risk score) to active containment (account lock), eradication, recovery, and institutional forensic auditing.
+
+```mermaid
+graph LR
+    Detect["Detect (Anomaly)"] --> Triage["Triage (Risk)"]
+    Triage --> Contain["Contain (Lock)"]
+    Contain --> Recover["Recover & Audit"]
+```
+
+### 3. Distributed Identity Protection Topology
+Strategically orchestrating threat detection and remediation across multi-cloud IdPs (Entra ID, Okta, Ping), providing a unified institutional view of global identity health and threat coverage.
+
+```mermaid
+graph LR
+    Entra["Entra ID: Risk Signals"] -->|Protect| Hub["Unified Identity Hub"]
+    Okta["Okta: Auth Telemetry"] -->|Protect| Hub
+    Ping["Ping: Behavioral Data"] -->|Protect| Hub
+    Hub --- Logic["Global Protection Engine"]
+```
+
+### 4. AIOps Identity Anomaly & Pattern Validation Flow
+Executing complex logic for identifying suspicious login patterns—including impossible travel, brute force attempts, and MFA fatigue—ensuring every organizational login is verified against real-time risk telemetry.
+
+```mermaid
+graph TD
+    Login["Login Interaction Event"] --> Patterns["Rule: Behavioral Patterns"]
+    Patterns --> AIOps["Rule: Anomaly Detection"]
+    AIOps -->|Evaluate| Risk["PATH: Identity Risk View"]
+    Risk --- Estimate["Threat Confidence Score"]
+```
+
+### 5. Conditional Access & Risk-Based Auth Flow
+Automatically triggering MFA challenges or blocking access based on real-time risk telemetry and institutional policy, ensuring zero-latency protection against credential-based attacks.
+
+```mermaid
+graph LR
+    Request["Access Request"] -->|Apply| Guard["Adaptive Auth Enforcer"]
+    Guard -->|High-Risk| Challenge["Force Phish-Resistant MFA"]
+    Challenge -->|Pass| Admit["Status: Admitted"]
+    Admit --- Audit["Auth Compliance Log"]
+```
+
+### 6. Session Revocation & Distributed Lockout Flow
+Managing the lifecycle of a compromised identity, automatically terminating active sessions across all cloud and on-premises applications, ensuring zero-standing-privilege during an active incident.
+
+```mermaid
+graph LR
+    Identity["Compromised Identity"] -->|Provision| Revoke["Global Session Kill"]
+    Revoke -->|Provision| Lock["Distributed Account Lock"]
+    Lock -->|Provision| Alert["Institutional Alert"]
+    Alert --- Monitor["Real-Time Lockout Loop"]
+```
+
+### 7. Institutional Identity Maturity Scorecard
+Grading organizational performance based on key indicators: Identity Posture Grade, Remediation Velocity, and Threat Coverage Index.
+
+```mermaid
+graph TD
+    Post["Identity Health: 97%"] --> Risk["Protection Gap: 3%"]
+    Post --- C1["Posture Grade (100%)"]
+    Post --- C2["Remediation Speed (95%)"]
+```
+
+### 8. Identity & RBAC for Threat Governance
+Managing fine-grained access to protection hubs, remediation triggers, and audit logs between Security Analysts, Identity Architects, and Incident Responders.
+
+```mermaid
+graph TD
+    Analyst["Security Analyst"] --> Hub["Observe global threats"]
+    Architect["Identity Architect"] --> Exec["Execute protection rules"]
+    Responder["Incident Responder"] --> Audit["Verify Protection Proofs"]
+```
+
+### 9. IaC Deployment: Protection-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the protection tracking hubs, analytics workers, and forensic metadata lakes.
+
+```mermaid
+graph LR
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["Protection Control Plane"]
+    Engine --> Clusters["HA Validation Fleet"]
+```
+
+### 10. Credential Leakage & Dark Web Monitoring Flow
+Using advanced analytics to identify compromised corporate credentials on the dark web or public breaches before they are used for attacks, ensuring proactive institutional defense.
+
+```mermaid
+graph LR
+    Leak["Dark Web Credential"] --> Analyzer["Credential Discovery Bot"]
+    Analyzer -->|Match| Alert["Compromised Account Alert"]
+    Analyzer -->|Normal| Pass["Status Optimal"]
+```
+
+### 11. Metadata Lake for Forensic Identity Audit
+Storing long-term records of every login attempt, every threat detected, and every remediation action executed for institutional record-keeping, compliance auditing, and post-threat forensics.
+
+```mermaid
+graph LR
+    Threat["Threat Interaction Event"] --> Stream["Forensic Stream"]
+    Stream --> Lake["Identity Metadata Lake"]
+    Lake --> Trends["Remediation Efficiency Trends"]
+```
 
 ---
 
-## 📐 Architecture Storytelling: 30+ Advanced Diagrams
+## 🏛️ Core Protection Pillars
 
-### 1. Executive Protection Architecture
-*The orchestration of risk telemetry into proactive enforcement actions.*
-```mermaid
-graph TD
-    subgraph "Identity Protection Platform"
-        Portal[Protection Dashboard]
-        Policy[Policy Engine]
-        Enforce[Enforcement Engine]
-        Session[Session Guardian]
-        DB[(Policy Ledger)]
-    end
-
-    subgraph "Telemetry & Risk Ingest"
-        IDP[Entra / Okta]
-        EDR[CrowdStrike / SentinelOne]
-        Device[Intune / Jamf]
-    end
-
-    IDP --> Policy
-    EDR --> Policy
-    Device --> Policy
-    Policy --> Enforce
-    Enforce --> Session
-    Enforce --> DB
-    Portal --> Policy
-```
-
-### 2. Hybrid Protection Topology
-*Enforcing Zero Trust from the corporate datacenter to the cloud edge.*
-```mermaid
-graph LR
-    subgraph "On-Prem"
-        AD[Active Directory]
-    end
-    subgraph "Protection Hub"
-        GW[Identity Proxy / Gateway]
-    end
-    subgraph "Cloud / SaaS"
-        Cloud[AWS / Azure / SaaS]
-    end
-    User --> GW
-    GW -->|Verify Policy| Cloud
-    GW -->|Sync Baseline| AD
-```
-
-### 3. Risk-Based Access Control (RBAC 2.0)
-*The path from auth request to adaptive enforcement.*
-```mermaid
-sequenceDiagram
-    participant User
-    participant IDP
-    participant Protect
-    participant App
-
-    User->>IDP: Login Request
-    IDP->>Protect: Fetch Risk Score
-    Protect-->>Protect: Evaluate (Geo, IP, Device, Time)
-    Protect->>IDP: Decision: Force Step-up MFA
-    User->>IDP: Complete Strong MFA
-    IDP->>App: Grant Access
-```
-
-### 4. Adaptive MFA Enforcement Flow
-*Scaling authentication strength based on real-time risk.*
-```mermaid
-graph TD
-    Req[Access Request] --> Risk{Risk Score?}
-    Risk -- "Low (0-20)" --> S1[Standard SSO]
-    Risk -- "Medium (21-60)" --> S2[Push MFA]
-    Risk -- "High (61-100)" --> S3[Phishing-Resistant MFA]
-    Risk -- "Critical" --> Block[Deny Access]
-```
-
-### 5. Conditional Access Strategy
-*Standardizing policy enforcement across clouds.*
-```mermaid
-graph LR
-    subgraph "Policy Conditions"
-        User[Who?]
-        Dev[Device Posture?]
-        Loc[Location?]
-        App[Sensitivity?]
-    end
-    subgraph "Enforcement"
-        Decision{Policy Engine}
-    end
-    User --> Decision
-    Dev --> Decision
-    Loc --> Decision
-    App --> Decision
-    Decision --> Action[Allow / Block / Step-up]
-```
-
-### 6. Continuous Session Guardian
-*Monitoring active sessions for anomalous behavior.*
-```mermaid
-graph TD
-    Session[Active Session] --> Monitor[Real-time Analysis]
-    Monitor -->|Detect: IP Switch| Alert[Risk Spike]
-    Alert --> Action[Terminate Session Tokens]
-    Action --> ReAuth[Force Re-Authentication]
-```
-
-### 7. Just-in-Time (JIT) PAM Protection
-*Preventing permanent privileged access.*
-```mermaid
-sequenceDiagram
-    Admin->>Portal: Request Admin Access (2h)
-    Portal->>Manager: Approval Required
-    Manager-->>Portal: Approved
-    Portal->>Cloud: Provision Temp Role
-    Portal->>Portal: Set 2h Timer
-    Portal->>Cloud: Revoke Role (Timer Expiry)
-```
-
-### 8. Token Protection & Revocation Flow
-*Invalidating stolen tokens immediately.*
-```mermaid
-graph LR
-    Log[Threat Log] --> Detect[Detection: Token Stolen]
-    Detect --> Trigger[Protection Trigger]
-    Trigger --> Revoke[POST /revoke_tokens]
-    Revoke --> Cloud[AWS/Azure IDP]
-```
-
-### 9. Device Trust Evaluation Model
-*Integrating device health into access decisions.*
-```mermaid
-graph TD
-    MDM[Intune/Jamf] --> Health[Device Health Check]
-    Health -->|Compliant| Trust[Add Trust Token]
-    Health -->|Non-Compliant| Untrust[Remove Trust Token]
-    Trust --> Access[Grant Access]
-```
-
-### 10. Automated Account Quarantine
-*Isolating compromised identities from the ecosystem.*
-```mermaid
-graph TD
-    Threat[Critical Risk Detected] --> Lock[Disable AD Account]
-    Lock --> Kill[Kill Cloud Sessions]
-    Kill --> Notify[Alert SOC & User]
-```
-
-### 11. Phishing-Resistant MFA Path
-```mermaid
-graph LR
-    User[User] --> FIDO[FIDO2 Security Key]
-    FIDO --> Auth[Hardware Verification]
-    Auth --> IDP[Secure Login]
-```
-
-### 12. Passwordless Readiness Model
-```mermaid
-graph TD
-    Audit[Inventory] --> Enable[Hello/FaceID]
-    Enable --> Rollout[Phased User Migration]
-    Rollout --> Final[Remove Password Support]
-```
-
-### 13. Hybrid Identity Security Baseline
-```mermaid
-graph TD
-    AD[AD Forest] --> Hard[Hardening: No NTLM]
-    Hard --> Sync[Sync Secure Attributes]
-    Sync --> Cloud[Cloud Protection]
-```
-
-### 14. OIDC Client Protection Workflow
-```mermaid
-sequenceDiagram
-    App->>IDP: Register Client
-    IDP-->>App: Secure Client ID
-    App->>IDP: Validate URI
-```
-
-### 15. SAML Signature Verification Flow
-```mermaid
-sequenceDiagram
-    SP->>SP: Validate Cert Thumbprint
-    SP-->>IDP: Accept Response
-```
-
-### 16. Token Life-cycle Protection
-```mermaid
-graph LR
-    Issue[Issue Token] --> AT[Short-lived Access]
-    Issue --> RT[Protected Refresh]
-```
-
-### 17. API Key Rotation Automation
-```mermaid
-graph LR
-    Key[API Key] --> Expiry[90% Life]
-    Expiry --> Rotator[AWS/Azure Rotator]
-```
-
-### 18. Conditional Access (Geo-Blocking)
-```mermaid
-graph TD
-    Login[Login: IP Country X] --> Policy{Is Country Blocked?}
-    Policy -- Yes --> Deny[Immediate Block]
-```
-
-### 19. Privileged Session Recording & Lock
-```mermaid
-graph TD
-    Admin[Admin] --> Proxy[Session Proxy]
-    Proxy --> Record[Record Feed]
-    Proxy -->|Sus| Lock[Force Disconnect]
-```
-
-### 20. Identity Risk Score aggregation
-```mermaid
-graph LR
-    L[Logins] --> S[Score Engine]
-    B[Behavior] --> S
-    S --> V[Visual Dash]
-```
-
-### 21. Real-time Enforcement Ingest
-```mermaid
-graph LR
-    IDP[Okta] --> API[Protection API]
-    API --> Enforce[Enforcement Logic]
-```
-
-### 22. Policy Versioning & Rollback
-```mermaid
-graph TD
-    V1[Policy v1] --> Edit[Edit]
-    Edit --> V2[Policy v2 (Draft)]
-    V2 --> Deploy[Promote to Prod]
-```
-
-### 23. Zero Trust Posture Calculation
-```mermaid
-graph LR
-    Metrics[MFA, JIT, Posture] --> Model[Stats Model]
-    Model --> Maturity[Maturity Score]
-```
-
-### 24. SIEM Feedback Loop
-```mermaid
-graph LR
-    SIEM[Alerts] --> API[Protection API]
-    API --> Action[Auto-Remediate]
-```
-
-### 25. EDR Device Compliance Integration
-```mermaid
-graph LR
-    EDR[CrowdStrike] --> API[Protection API]
-    API -->|High Risk Host| Block[Block Identity Login]
-```
-
-### 26. MFA Bypass Prevention (FIDO)
-```mermaid
-graph TD
-    Push[Push Bombardment] --> Deny[User Deny]
-    Deny --> Lockdown[Enforce FIDO-Only]
-```
-
-### 27. Token Theft Prevention (Binding)
-```mermaid
-graph TD
-    Token[Token] --> Bind[Bind to Device Hardware]
-    Bind --> Usage[Usage: Valid Device Only]
-```
-
-### 28. Identity Lifecycle Hardening
-```mermaid
-stateDiagram-v2
-    Creation --> Verification: MFA Setup
-    Verification --> Usage: Daily RBAC
-    Usage --> Termination: Auto-Cleanup
-```
-
-### 29. Regional Enforcement Availability
-```mermaid
-graph LR
-    US[US Engine] <->|Global Policy Sync| EU[EU Engine]
-```
-
-### 30. Strategic Protection Roadmap
-```mermaid
-graph TD
-    Now[Conditional Access] --> Goal[Continuous Trust Engine]
-```
+1.  **Unified Identity Coordination**: Maximizing resilience by centralizing all identity protection through a single institutional plane.
+2.  **Automated Anomaly Enrichment**: Eliminating "suspicious login" scenarios through proactive behavioral and geo-pattern verification.
+3.  **Sequential Remediations Intelligence**: Ensuring zero-interruption operations through dependency-aware multi-cloud account locks.
+4.  **Zero-Trust Session Protection**: Automatically enforcing continuous authentication and identity-based session revocation.
+5.  **Autonomous Protection Logic**: Guaranteeing reliability through automated industry-specific identity monitoring runbooks.
+6.  **Full Identity Auditability**: Immutable recording of every threat detected and lockout action for institutional forensics.
 
 ---
 
 ## 🛠️ Technical Stack & Implementation
 
-### Protection Engine
-- **Processing**: Python 3.11+ / FastAPI
-- **Enforcement**: Real-time integration with IDP APIs (Okta, Entra ID, AWS).
-- **State**: Redis (Session monitoring and risk-state windowing).
+### Protection Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI.
+*   **AIOps Engine**: Integration with Cloud IdP Risk APIs (Microsoft Graph, Okta, Ping) and SIEM/SOAR signals.
+*   **Enforcement Core**: Custom Python-based logic for distributed session revocation and multi-directory account lockout.
+*   **Persistence**: PostgreSQL (Identity Ledger) and Redis (Live Job State).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege identity management access.
 
-### Frontend (Policy Management)
-- **Framework**: React 18 / Vite
-- **Visuals**: Lucide Icons / Indigo Protection Theme.
-- **Charts**: Recharts (Enforcement Trends & Risk Analytics).
+### Governance Dashboard (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Indigo, Slate (Modern high-fidelity identity aesthetic).
+*   **Visualization**: D3.js for identity topologies and Recharts for remediation velocity analytics.
 
-### Infrastructure
-- **IaC**: Terraform (Global EKS/DB deployment).
-- **Secrets**: AWS Secrets Manager / HashiCorp Vault.
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS or Azure Kubernetes Service (AKS) for management plane.
+*   **Guardian Hub**: Managed event sourcing for immutable identity threat timeline reconstruction.
+*   **IaC**: Modular Terraform for deploying the identity landing zone and validation fleet.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/idp_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/workers`** | Distributed protection fleet | K8s Workers, Cloud APIs |
+| **`infrastructure/guardians`** | Session Revocation Orchestrators | Webhooks, Lambda |
+| **`infrastructure/auditing`** | Forensic identity sinks | S3, Athena, Quicksight |
 
 ---
 
 ## 🚀 Deployment Guide
 
-### Local Development
+### Local Principal Environment
 ```bash
-# Clone the repository
+# Clone the identity platform
 git clone https://github.com/devopstrio/identity-threat-protection.git
 cd identity-threat-protection
 
-# Setup environment
+# Configure environment
 cp .env.example .env
 
-# Launch services
-make up
+# Launch the Identity stack
+make init
+
+# Trigger a mock anomaly detection and automated account lockout simulation
+make simulate-identity
 ```
-Access the Management Portal at `http://localhost:3000`.
+
+Access the Management Dashboard at `http://localhost:3000`.
 
 ---
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
